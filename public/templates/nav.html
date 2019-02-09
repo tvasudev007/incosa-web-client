@@ -1,0 +1,75 @@
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" ui-sref="assetList"><span> <img ng-src="logo.jpg" width="90px"/></span></a>
+    </div>
+    <!-- /.navbar-header -->
+
+    <ul class="nav navbar-top-links navbar-right">
+
+
+        <!-- /.dropdown -->
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" >
+                <i class="fa fa-user fa-fw"></i> {{username}} <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+               <li><a ><i class="fa fa-user fa-fw"></i> Hi,{{username}} </a>
+                </li>
+
+                <li class="divider"></li>
+                <li><a ui-sref="login"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+
+                </li>
+            </ul>
+            <!-- /.dropdown-user -->
+        </li>
+        <!-- /.dropdown -->
+    </ul>
+
+
+
+    <div class="navbar-default sidebar" role="navigation">
+        <div class="sidebar-nav navbar-collapse">
+            <ul class="nav" id="side-menu">
+
+                <li>
+                   <!-- <a ui-sref="dashboard"><i class="fa fa-sitemap fa-fw"></i><span ng-click="dashboard()"> Gateways</span> <span class="fa arrow"></span></a> -->
+                   <a ui-sref="assetList"> <i class="fa fa-dashboard fa-fw"></i><span ng-click="emd()"> Dashboard</span></a>
+                    <ul class="nav nav-second-level">
+                    <!--  <li>
+                        <a ui-sref="drone"><i class="fa  fa-video-camera fa-fw"></i> Surveillance </span></a>
+                      </li> -->
+                        <li>
+                            <!-- <a ui-sref="sensorList"> <i class="fa fa-dashboard fa-fw"></i><span ng-click="emd()">Sensors</span><span class="fa arrow"></span></a> -->
+                            <ul class="nav nav-third-level">
+                                <!--
+                                <li ng-repeat="sensor in sensorList track by $index ">
+                                  <a ng-click="sensorPage(sensor)"><i class="fa fa-microchip" ></i> {{sensor.sensor_id}} </a>
+
+                                </li> -->
+                            </ul>
+                            <!-- /.nav-third-level -->
+                        </li>
+
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li>
+                   <a ui-sref="alerts"> <i class="fa fa-exclamation-triangle"></i> <span > Alerts </span></a>
+                </li>
+                <li>
+                   <a ui-sref="reports"> <i class="fa fa-copy"></i><span > Reports </span></a>
+                </li>
+
+            </ul>
+        </div>
+        <!-- /.sidebar-collapse -->
+    </div>
+    <!-- /.navbar-static-side -->
+</nav>

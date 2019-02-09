@@ -1,0 +1,119 @@
+<style>
+/* === card component ======
+ * Variation of the panel component
+ * version 2018.10.30
+ * https://codepen.io/jstneg/pen/EVKYZj
+ */
+
+</style>
+
+
+<div class="container-fluid">
+                <!-- Page Heading -->
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item active"> <i class="fa fa-exclamation-triangle"></i> Alerts</li>
+                </ol>
+                <div class="row">
+                    <div class="col-lg-12">
+                    </div>
+                </div>
+                <!-- /.row -->
+                <div class="row" >
+                    <div class="col-lg-6">
+                        <div class="panel panel-danger">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    <i class="fa fa-exclamation-triangle"></i> Recent Alerts
+                                    <input type="text" ng-model="search" class="form-control" placeholder="Search">
+                                </h3>
+                            </div>
+
+                            <div class="panel-body">
+                                 <div class="table-responsive">
+                                    <table class="table table-hover table-responsive">
+                                        <thead>
+                                            <tr>
+                                                <th>Tag Name </th>
+                                                <th>Value</th>
+                                                <th>Last Update</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr role="button" ng-click="showHistory(alert)" class='clickable-row' dir-paginate="alert in alertList | filter:search | orderBy:'-date' |itemsPerPage:20 " pagination-id="alert">
+                                                <td>{{alert.assetId + "_"+ alert.tagName}} </td>
+                                                <td>{{alert.statusLevel}}</td>
+						                                    <td>{{alert.date | date:'dd-MM-yy HH:mm'}} </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <dir-pagination-controls pagination-id="alert"
+                                       max-size="25"
+                                       direction-links="true"
+                                       boundary-links="true" >
+                                    </dir-pagination-controls>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="row">
+                        <div class="col-lg-12">
+                              <div class="panel panel-warning">
+                                <div class="panel-heading">
+                                  <div class="row">
+                                      <div class="col-md-4">
+                                        <i class="fa fa-bar-chart-o fa-fw"></i>
+                                        Trend
+                                      </div >
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <div id="alertHistory" style="min-width: {{chartWidth}} ; height: 200px; margin: 0 auto"></div>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-12">
+                              <div class="panel panel-warning">
+                                <div class="panel-heading">
+                                  <div class="row">
+                                      <div class="col-md-8">
+                                        <i class="fa fa-bar-chart-o fa-fw"></i>
+                                        Snapshot Values
+                                      </div >
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                  <div class="table-responsive">
+                                     <table class="table table-hover table-responsive">
+                                         <thead>
+                                             <tr>
+                                                 <th>Tag Name </th>
+                                                 <th>Value</th>
+                                             </tr>
+                                         </thead>
+                                         <tbody>
+                                             <tr dir-paginate="tag in tagSnapshotList |itemsPerPage:17 " pagination-id="alertTagSnapshot">
+                                                 <td>{{tag.Tagname}} </td>
+                                                 <td>{{tag.Value}}</td>
+                                             </tr>
+                                         </tbody>
+                                     </table>
+                                     <dir-pagination-controls pagination-id="alertTagSnapshot"
+                                        max-size="17"
+                                        direction-links="true"
+                                        boundary-links="true" >
+                                     </dir-pagination-controls>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+
+</div>
+                <!-- /.row -->
+
+            <!-- /.container-fluid -->

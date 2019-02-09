@@ -1,0 +1,20 @@
+---
+applications:
+  - name: IncosaUI_v1
+    memory: 256M
+    timeout: 180
+    buildpack: nodejs_buildpack
+    command: npm start
+    #path: build/es5-basic
+
+env:
+    node_env: cloud
+    uaa_service_label: predix-uaa
+    clientID: client
+    # Add these values for authentication in the cloud
+    base64ClientCredential: Y2xpZW50OmNsaWVudA==
+    loginBase64ClientCredential: Y2xpZW50OmNsaWVudA==
+    # Use a full wss:// URL for actual web socket server. use /livestream for mock data.
+    websocketServerURL: /livestream
+    #rmdDatasourceURL: {URL of your RMD datasource microservice}
+    

@@ -1,0 +1,140 @@
+<div class="container-fluid">
+
+<div class="row">
+	<ol class="breadcrumb">
+      		<li class="breadcrumb-item "> <i class="fa fa-tachometer"></i> Dashboard</li>
+        </ol>
+     <!--<div class="col-lg-11">
+        <h1 class="page-header"><i class="fa fa-tachometer"></i> Dashboard</h1>
+    </div>-->
+
+    <!-- /.col-lg-12 -->
+</div>
+
+<!-- <div class="row">
+  <div class="col-lg-3 col-md-6">
+      <div class="panel panel-primary">
+          <div class="panel-heading">
+              <div class="row">
+                  <div class="col-xs-3">
+                      <i class="fa fa-comments fa-5x"></i>
+                  </div>
+                  <div class="col-xs-9 text-right">
+                      <div class="huge">26</div>
+                      <div>EVENTS</div>
+                  </div>
+              </div>
+          </div>
+
+
+
+      </div>
+  </div>
+  <div class="col-lg-3 col-md-6">
+      <div class="panel panel-green">
+          <div class="panel-heading">
+              <div class="row">
+                  <div class="col-xs-3">
+                      <i class="fa fa-tasks fa-5x"></i>
+                  </div>
+                  <div class="col-xs-9 text-right">
+                      <div class="huge">12</div>
+                      <div>ONLINE</div>
+                  </div>
+              </div>
+          </div>
+
+
+      </div>
+  </div>
+  <div class="col-lg-3 col-md-6">
+      <div class="panel panel-yellow">
+          <div class="panel-heading">
+              <div class="row">
+                  <div class="col-xs-3">
+                      <i class="fa fa-shopping-cart fa-5x"></i>
+                  </div>
+                  <div class="col-xs-9 text-right">
+                      <div class="huge">124</div>
+                      <div>ORDERS</div>
+                  </div>
+              </div>
+          </div>
+
+
+      </div>
+  </div>
+  <div class="col-lg-3 col-md-6">
+      <div class="panel panel-red">
+          <div class="panel-heading">
+              <div class="row">
+                  <div class="col-xs-3">
+                      <i class="fa fa-support fa-5x"></i>
+                  </div>
+                  <div class="col-xs-9 text-right">
+                      <div class="huge">13</div>
+                      <div>ALERTS</div>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+  </div>
+</div> -->
+
+
+<div class="row">
+  <div class="col-lg-12 col-md-12">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+          <h3 class="panel-title">
+              <i class="fa fa-list"></i> Asset Details
+							<input type="text" ng-model="assetSearch" class="form-control" placeholder="Search">
+          </h3>
+      </div>
+      <div class="panel-body">
+          <div class="table-responsive">
+              <table class="table table-hover table-responsive">
+                  <thead>
+                      <tr>
+                          <th>Name</th>
+                          <th>Serial</th>
+                          <th>Rated Voltage</th>
+													<th>Rated Capacity</th>
+													<th>RC Manufacturer</th>
+													<th>RC Part No</th>
+													<th>Hoist Count</th>
+													<th>Controller Count</th>
+													<th>State</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                        <tr role="button" ng-click="sensorDisplay(sensor)" class='clickable-row'
+												dir-paginate="sensor in sensorList |filter:assetSearch |itemsPerPage:10 " pagination-id="assets">
+                          <td>{{sensor.attributes.Name}}</td>
+                          <td>{{sensor.attributes.SerialNo}}</td>
+                          <td>{{sensor.attributes["Rated Voltage"]}}</td>
+													<td>{{sensor.attributes["Rated Capacity"]}}</td>
+													<td>{{sensor.attributes["Radio Control Manufacture"]}}</td>
+													<td>{{sensor.attributes["Radio Control Part Number"]}}</td>
+													<td>{{sensor.attributes["Number of Hoists"]}}</td>
+													<td>{{sensor.attributes["Number of Controllers"]}}</td>
+													<td>ON</td>
+                        </tr>
+                    </tbody>
+              </table>
+							<dir-pagination-controls pagination-id="assets"
+								 max-size="10"
+								 direction-links="true"
+								 boundary-links="true" >
+							</dir-pagination-controls>
+          </div>
+      </div>
+    </div>
+
+
+</div>
+
+</div>
+
+</div>

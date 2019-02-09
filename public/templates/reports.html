@@ -1,0 +1,113 @@
+<div class="container-fluid">
+
+  <!-- Page Heading -->
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active"> <i class="fa fa-copy"></i> Reports</li>
+  </ol>
+
+  <div class="row">
+      <div class="col-lg-12">
+      </div>
+  </div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-md-4">
+                      <i class="fa fa-info-circle"></i> Trend Analysis Selection
+                    </div >
+                  </div>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+
+                      <div class="col-md-6" class="input-group date" id="assetSelector" >
+                        <b> Select assets: <b>
+                          <div ng-dropdown-multiselect="" options="assetList" selected-model="selectedAssetList" extra-settings="assetListSettings"></div>
+                      </div>
+
+                      <div class="col-md-6" class="input-group date" id="tagSelector">
+                        <b> Select tags: <b>
+                          <div ng-dropdown-multiselect="" options="tagList" selected-model="selectedTagList" extra-settings="tagListSettings"></div>
+                      </div>
+
+                      <br/> <br/> <br/>
+
+                    <div class="col-md-8" class="input-group date" id="datetimepicker1" >
+                      <b> Enter start time: <b>  <input type="text" class="form-control" placeholder="START" ng-model="start" datetime-picker hour="23" minute='59' />
+                    </div>
+
+                      <br/> <br/> <br/>
+
+                    <div class="col-md-8"class="input-group date" id="datetimepicker2" >
+                      <b> Enter end time: <b> <input type="text" class="form-control" placeholder="END" ng-model="end" datetime-picker hour="23" minute='59' />
+                    </div>
+
+                    <br/> <br/> <br/> <br/>
+
+                    <div class="col-md-4"class="input-group date" id="datetimepickerBTN" ng-click="getDataForTags(start,end)">
+                       <button type="button" class="btn btn-lg btn-info glyphicon glyphicon-circle-arrow-right"></button>
+                    </div>
+
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" ng-show='seriesOptions'>
+      <div class="col-lg-12">
+            <div class="panel panel-success">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-md-4">
+                    <i class="fa fa-bar-chart-o fa-fw"></i>
+                    Trend Analysis
+                  </div >
+                  </div>
+              </div>
+              <div class="panel-body">
+                  <div id="reportChart" style="min-width: {{chartWidth}} ; height: 600px; margin: 0 auto"></div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" ng-if="tableContent.length" >
+        <div class="col-lg-12">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <i class="fa fa-bell"></i> Tag Wise Historical data
+                        <input type="text" ng-model="search" class="form-control" placeholder="Search">
+                    </h3>
+                </div>
+
+                <div class="panel-body" >
+                     <div class="table-responsive" >
+                        <table class="table table-hover table-responsive">
+                            <thead>
+                                <tr >
+                                    <th ng-repeat="headers in tableHeaders track by $index" > {{headers}} </th>
+                                </tr>
+                            </thead>
+                            <tbody  >
+                                <tr dir-paginate="tablerow in tableContent |itemsPerPage:10 " pagination-id="reports"  >
+                                    <td ng-repeat="cell in tablerow track by $index" > {{cell}} </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <dir-pagination-controls pagination-id="reports"
+                           max-size="10"
+                           direction-links="true"
+                           boundary-links="true" >
+                        </dir-pagination-controls>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

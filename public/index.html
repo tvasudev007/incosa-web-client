@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Incosa Solutions</title>
+
+      <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <!-- <link href="vendor/metisMenu/metisMenu.min.css" rel="stylesheet"> -->
+
+    <!-- Custom CSS -->
+    <link href="dist/css/sb-admin-2.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/angularjs-datetime-picker.css" />
+
+    <!-- Morris Charts CSS -->
+    <!-- <link href="vendor/morrisjs/morris.css" rel="stylesheet"> -->
+
+    <!-- Custom Fonts -->
+    <!-- <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <!-- <script src="vendor/metisMenu/metisMenu.min.js"></script> -->
+
+    <!-- Morris Charts JavaScript -->
+    <!-- <script src="vendor/raphael/raphael.min.js"></script> -->
+    <!--<script src="vendor/morrisjs/morris.min.js"></script>
+    <script src="data/morris-data.js"></script>-->
+      <!--<script src="js/fusioncharts.js"></script>
+    <script src="js/fusioncharts.charts.js"></script>
+    <script src="js/fusioncharts.widgets.js"></script>-->
+
+    <!-- <script src='./bower_components/angular/angular.min.js' type='text/javascript'></script> -->
+
+
+    <!-- <script type="text/javascript" src="https://static.fusioncharts.com/code/latest/fusioncharts.js"></script>
+    <script type="text/javascript" src="https://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.fint.js?cacheBust=56"></script> -->
+
+    <!--<script src="js/highcharts.js"></script>
+    <script src="js/highcharts.exporting.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.0.0-rc.14.min.js"></script>-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highcharts/5.0.6/css/highcharts.css" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+
+
+    <!--<script src="js/mqttws.js"></script>-->
+    <!-- Custom Theme JavaScript -->
+    <script src="dist/js/sb-admin-2.js"></script>
+
+    <!-- <script type="text/javascript" src="cordova.js"></script> -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-ui-router.min.js"></script>
+
+    <script src="bower_components/angularUtils-pagination/dirPagination.js"></script>
+
+    <script src="bower_components/angularjs-gauge/src/angularjs-gauge.js"></script>
+
+    <link rel="stylesheet" href="bower_components/angular-block-ui/dist/angular-block-ui.min.css"/>
+    <script src="bower_components/angular-block-ui/dist/angular-block-ui.min.js"></script>
+
+    <script type="text/javascript" src="bower_components/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js"></script>
+
+
+    <script src="js/angularjs-datetime-picker.js"></script>
+    <!-- <script src="https://rawgithub.com/eligrey/FileSaver.js/master/FileSaver.js" type="text/javascript"></script> -->
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers.js"></script>
+  	<script src="scripts/services.js"></script>
+  	<script src="scripts/routes.js"></script>
+  	<script src="scripts/directives.js"></script>
+
+
+
+<style>
+/*h1{
+  color:white
+}
+#page-wrapper {
+    /*padding: 0 15px;
+    min-height: 568px;*/
+    background-color: #8cd9f1;
+    /*background-color:rgba(17,48,58,0.61);*
+  }*/
+</style>
+
+</head>
+
+<body ng-controller="bodyCtrl" background={{img}} >
+
+<div ui-view="noMenu" ></div>
+
+    <div id="wrapper" ng-hide="loginHide" >
+      <div ui-view="menu"></div>
+
+        <!-- Navigation -->
+
+        <div id="page-wrapper" >
+
+        <!-- /#page-wrapper -->
+          <div ui-view="page"></div>
+
+        </div>
+    <!-- /#wrapper -->
+    </div>
+
+</body>
+
+</html>

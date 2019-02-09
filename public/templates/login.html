@@ -1,0 +1,32 @@
+
+
+    <div class="container" >
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"> <span> <img src="logo.jpg" width="90px"/></span>  </h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form">
+
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Username" name="name" type="text" autofocus ng-model="userName">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Password" name="password" type="password" ng-model="userPassword">
+                                </div>
+
+                                <!-- Change this to a button or input when using this as a form -->
+                                <button ng-click="loginValidator(userName,userPassword);"class="btn btn-lg btn-primary btn-block">Login</button>
+                                <br>
+                                <span style="color:red;">{{userError}}</span>
+                    
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
