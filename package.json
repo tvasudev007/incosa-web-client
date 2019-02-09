@@ -17,7 +17,7 @@
     "events": "^1.1.1",
     "express": "^4.14.0",
     "ip": "^1.1.5",
-    "moment": "^2.18.1",
+    "moment": "^2.19.3.",
     "morgan": "^1.7.0",
     "mysql": "^2.13.0",
     "ng-loading-overlay": "^1.2.0",
